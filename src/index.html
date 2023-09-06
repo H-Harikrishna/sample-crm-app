@@ -6,8 +6,35 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!--we can directly add bootstrap package to our project by below command
+            v4 => 'npm i bootstrap jquery popper --save'
+            v5 => 'npm i bootstrap popper --save'
+            update angular.json(styles and scripts) after installation.
+            styles => "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+            script => "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+                      "./node_modules/popper/index.js",
+                      "./node_modules/jquery/dist/jquery.min.js"
+      (without '--save' it's global reference, with save it's local referance.
+      always add it locally, otherwise we won't work)
+      verify the bootstrap packages in package.json-->
+
+  <!-- The below two lines will add bootstrap to our project(via CDN links)
+       
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+  <!-- we also added 'angular material' using 'ng add @angular/material'
+      UPDATE src/app/app.module.ts (502 bytes) => browserAnimation module added here
+      UPDATE angular.json (3165 bytes) => added styles("@angular/material/prebuilt-themes/indigo-pink.css")
+      UPDATE src/index.html (1804 bytes) => added below links that are after this note
+      UPDATE src/styles.css (181 bytes) => go through the file you will see notes.
+  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body class="mat-typography">
   <app-root></app-root>
 </body>
 </html>
