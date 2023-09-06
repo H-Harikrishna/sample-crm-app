@@ -14,9 +14,11 @@ import { MatButtonModule } from '@angular/material/button'
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule     // it was added automatically while installing angular material
   ],
   providers: [],
+// like we have bootstrapModule in main.ts, we also have bootstrap in every module to start with a specific component.
+// here it is AppComponent by default.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
