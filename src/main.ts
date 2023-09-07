@@ -144,11 +144,71 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 //     - Extend the implements interface 
 //     - Implement the method  
 // 3. We can have any number of lifecycle hooks implemented 
-// 4. Its too early for us to implement all of them today
-//     - We will revisit this topic again component communication 
+// 4. We will revisit this topic again after component communication 
 //     - Component Communication means communicating Between components 
 //        - Parent to Child 
 //        - Child to Parent 
+
+// Communication between various Angular components :
+// ``````````````````````````````````````````````````
+// Contacts -> Module 
+//     contact-listing -> parent component 
+//         contact-grid -> child component 
+//         contact-tools -> child component 
+//             download-pdf -> sub-child component 
+//             download-excel 
+// Leads -> Module 
+//     leads-listing -> parent component 
+// Components are hierarchial 
+// Parent-child relationship 
+// 1. Communications between the related components 
+//     parent component --> child components
+//         @Input 
+//     parent components <-- child components
+//         @Output 
+
+//     Leads Module 
+//         leads-listing 
+//             leads-grid 
+//             leads-tools 
+//                 download-excel
+//                 download-pdf
+
+// 2. communication between totally unrealted components 
+//     Component1 --> Services <-- Component2
+//     services 
+//         is a common reusable piece of functionality shared between different components
+
+// Templates in Angular components :
+// `````````````````````````````````
+// 1. whenever we generate a component, 4 sub-files will be generated.
+//         - template file ( .html )
+//         - style.scss ( stylesheet) --> This is totally based on the choice at installing Angular app
+//         - class (component.ts file )
+//         - spec ( unit test file)
+// 2. <comp_name>.component.html is nothing but the template of the specific component.
+// 3. it bound to the component using 'templateUrl' in <comp_name>.component.ts file inside @Component decorator.
+// 5. by default Angular will add "app" as prefix 
+//     - selector -> "app-<comp-name>" 
+//     - unique identifier to identify this component 
+//     - <app-leads-listing> 
+//         -> Can you change the default "app" prefix ? 
+//             -> YES - we can change it throughout the app 
+//                 -> in angular.json we can change prefix("app") also
+//         -> what will happen if i change ? 
+//             - Nothing happenns. Only thing you change, make sure you update with latest info
+//         -> will your app work or will it crash ? 
+//             -> If you have updated the necessary components with latest prefix 
+// 6. There are two ways of using templates in Components 
+//     - templateUrl - link the html file. it's always 1 single html file 
+//     - template 
+//         -> we will pass the template itself instead of a html file 
+//         -> we just the HTML code that we want the component to display 
+//         -> we will use "backtick", can be found on left top side (`) but NOT single quote
+// 7. stylesURL :
+//     -> is an array 
+//     -> it can take multple stylesheets as input 
+//     -> it can be one or more stylesheets 
 // 
 // 
 // 
